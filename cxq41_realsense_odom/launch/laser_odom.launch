@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- lidar Launcher -->
+    <node name="delta_2b_lidar"    pkg="delta_2b_lidar"  type="delta_2b_lidar_node" output="screen">
+        <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
+        <param name="frame_id"            type="string" value="laser"/>
+        <remap from="/scan" to="/lidar_laser"/>
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="real_laser_to_camera_link_broadcaster" args="0 0 7 0 0 0 camera_link laser 100" />
+
+    <!-- rf2o node -->
+    <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="rf2o_laser_odometry_lidar" output="screen">
+        <param name="laser_scan_topic" value="/lidar_laser"/>
+        <param name="odom_topic" value="/odometry_rf2o/real_laser"/>
+        <param name="publish_tf" value="false" />
+        <param name="base_frame_id" value="/laser"/>
+        <param name="odom_frame_id" value="/rf2o_odom_lidar" />
+        <param name="init_pose_from_topic" value="" />
+        <param name="freq" value="10.0"/>
+        <param name="verbose" value="true" />
+    </node>
+
+    <!-- logger -->
+        <node pkg="cxq41_realsense_odom" type="logger" name="logger" output="screen"/>
+</launch>

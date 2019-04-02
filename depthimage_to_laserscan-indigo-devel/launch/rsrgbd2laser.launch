@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+<!-- Depth to Laser Conversion Call -->
+        <!-- center -->
+            <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan_center" output="screen" respawn="true" respawn_delay="0">
+                <remap from="image" to="/camera/depth/image_rect_raw"/>
+                <remap from="scan" to="/RealSense_laser/scan_center"/>
+                <param name="output_frame_id" value="laser_center" />
+                <param name="scan_height" value="50"/>
+                <param name="scan_offset" value="0"/>
+            </node>
+            <node pkg="tf" type="static_transform_publisher" name="laser_center_to_camera_link_broadcaster" args="0 0 0 0 0 0 camera_aligned_depth_to_color_frame laser_center 100" />
+        <!-- top -->
+            <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan_top" output="screen" respawn="true" respawn_delay="0">
+                <remap from="image" to="/camera/depth/image_rect_raw"/>
+                <remap from="scan" to="/RealSense_laser/scan_top"/>
+                <param name="output_frame_id" value="laser_top" />
+                <param name="scan_height" value="50"/>
+                <param name="scan_offset" value="-180"/>
+            </node>
+            <node pkg="tf" type="static_transform_publisher" name="laser_top_to_camera_link_broadcaster" args="0 0 0.7 0 0 0 camera_aligned_depth_to_color_frame laser_top 100" />
+        <!-- bottom -->
+            <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan_bottom" output="screen" respawn="true" respawn_delay="0">
+                <remap from="image" to="/camera/depth/image_rect_raw"/>
+                <remap from="scan" to="/RealSense_laser/scan_bottom"/>
+                <param name="output_frame_id" value="laser_bottom" />
+                <param name="scan_height" value="50"/>
+                <param name="scan_offset" value="180"/>
+            </node>
+            <node pkg="tf" type="static_transform_publisher" name="laser_bottom_to_camera_link_broadcaster" args="0 0 -0.7 0 0 0 camera_aligned_depth_to_color_frame laser_bottom 100" />
+
+</launch>

@@ -1,0 +1,37 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  Depth_Units: 0.0010000000474974513
+  Emitter_Enabled: true
+  Enable_Auto_Exposure: true
+  Error_Polling_Enabled: true
+  Exposure: 8500
+  Frames_Queue_Size: 16
+  Gain: 16
+  Inter_Cam_Sync_Mode: 0.0
+  Laser_Power: 360.0
+  Output_Trigger_Enabled: false
+  Visual_Preset: 3
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      Depth_Units: 0.0010000000474974513
+      Emitter_Enabled: true
+      Enable_Auto_Exposure: true
+      Error_Polling_Enabled: true
+      Exposure: 8500
+      Frames_Queue_Size: 16
+      Gain: 16
+      Inter_Cam_Sync_Mode: 0.0
+      Laser_Power: 360.0
+      Output_Trigger_Enabled: false
+      Visual_Preset: 3
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      id: 0
+      name: Default
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      state: true
+      type: ''
+    state: []
+state: []

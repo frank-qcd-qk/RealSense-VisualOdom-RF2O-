@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/frank/ros_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/frank/ros_ws/src/learning_ros_kinetic/Part_4/example_nav_plugin/include",
+                "/home/frank/ros_ws/src/learning_ros_external_pkgs_kinetic/gazebo_ros_pkgs/gazebo_plugins/include",
+                "/home/frank/ros_ws/src/learning_ros_external_pkgs_kinetic/gazebo_ros_pkgs/gazebo_ros/include",
+                "/home/frank/ros_ws/src/learning_ros_external_pkgs_kinetic/gazebo_ros_pkgs/gazebo_ros_control/include",
+                "/home/frank/ros_ws/src/learning_ros_kinetic/Part_4/odom_tf/include",
+                "/home/frank/ros_ws/src/learning_ros_kinetic/Part_4/test_plugin/include",
+                "/home/frank/ros_ws/src/learning_ros_kinetic/Part_4/traj_builder/include",
+                "/home/frank/ros_ws/src/learning_ros_kinetic/Part_2/xform_utils/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
